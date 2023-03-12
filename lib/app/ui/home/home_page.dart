@@ -1,3 +1,4 @@
+import 'package:consumo_de_api_de_clima/app/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
