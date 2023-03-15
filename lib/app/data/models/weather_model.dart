@@ -38,10 +38,10 @@ class Weather {
   String icon;
 
   factory Weather.fromJson(Map<String, dynamic> json) => Weather(
-    id: json["id"],
-    main: json["main"],
-    description: json["description"],
-    icon: json["icon"],
+    id: json["weather"][0]["id"],
+    main: json["weather"][0]["main"],
+    description: json["weather"][0]["description"],
+    icon: json["weather"][0]["icon"],
   );
 
   Map<String, dynamic> toJson() => {
