@@ -1,11 +1,12 @@
 import 'package:consumo_de_api_de_clima/app/data/providers/weather_provider.dart';
+import 'package:flutter/material.dart';
 
-class MyRepository {
+class WeatherRepository {
   final WeatherApiClient? apiClient;
 
-  MyRepository({required this.apiClient}) : assert(apiClient != null);
+  WeatherRepository({@required this.apiClient}) : assert(apiClient != null);
 
-  Future getAll() {
-    return apiClient!.getAll();
+  Future getWeather() {
+    return apiClient!.getWeather();
   }
 }
