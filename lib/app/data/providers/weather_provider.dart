@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:consumo_de_api_de_clima/app/data/models/weather_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
 
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=-22.83178514538392&lon=-43.08279869011315&appid=00946946320790876002d6b7e579c753';
 // TODO: a baseurl tá com latitude e longitude fixas, buscar forma de acessar a localização do dispositivo

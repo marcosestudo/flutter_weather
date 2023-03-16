@@ -7,7 +7,7 @@ void main() {
   runApp(GetMaterialApp(
     title: "Weather app",
     debugShowCheckedModeBanner: true,   
-    initialRoute: '/',
+    initialRoute: Routes.HOME,
     // theme: appThemeData,
     defaultTransition: Transition.fade,   
     getPages: AppPages.pages,
