@@ -8,7 +8,8 @@ class HomeController extends GetxController {
   final teste = "testando controller :)";
   bool isLoading = true;
 
-  WeatherModel weather = WeatherModel();
+  // WeatherModel weather = WeatherModel();
+  dynamic weather;
   late final WeatherRepository? repository;
   HomeController({@required this.repository}) : assert(repository != null);
 
@@ -23,6 +24,7 @@ class HomeController extends GetxController {
     repository?.getWeather().then((value) {
       weather = value;
       debugPrint("--- PASSANDO POR AQUI --- PASSANDO POR AQUI --- PASSANDO POR AQUI --- PASSANDO POR AQUI ---");
+      debugPrint(weather.toString());
       isLoading = false;
       update();
     });

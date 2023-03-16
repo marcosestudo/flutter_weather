@@ -1,5 +1,4 @@
 class WeatherModel {
-
   int id = 0;
   String main = "";
   String description = "";
@@ -8,13 +7,18 @@ class WeatherModel {
   WeatherModel();
 
   WeatherModel.fromJson(Map<String, dynamic> json){
-    id = json['weather'][0]['id'];
-    main = json['weather'][0]['main'];
-    description = json['weather'][0]['description'];
-    icon = json['weather'][0]['icon'];
+    id = json['id'];
+    main = json['main'];
+    description = json['description'];
+    icon = json['icon'];
   }
 
-  Map<String, dynamic> toJson() => {
-
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['main'] = this.main;
+    data['description'] = this.description;
+    data['icon'] = this.icon;
+    return data;
+  }
 }

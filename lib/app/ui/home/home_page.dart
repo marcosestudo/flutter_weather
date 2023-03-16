@@ -15,8 +15,16 @@ class HomePage extends GetView<HomeController> {
           return controller.isLoading
               ? const Center(child: CircularProgressIndicator())
               : Center(
-                  child: Text("controller.weather.main"),
-                );
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("id ${controller.weather['id']}"),
+                    Text("main: ${controller.weather['main']}"),
+                    Text("description: ${controller.weather['description']}"),
+                    Text("icon: ${controller.weather['icon']}"),
+                  ],
+                ),
+              );
         })
     );
   }
