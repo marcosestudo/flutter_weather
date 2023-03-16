@@ -5,12 +5,18 @@ import 'package:get/get.dart';
 class HomePage extends GetView<HomeController> {
   HomePage({Key? key}) : super(key: key);
 
-  final controller = Get.put(HomeController());
-
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(controller.teste),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("teste"),
+        ),
+        body: GetBuilder<HomeController>(builder: (_) {
+          return controller.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : Center(
+                  child: Text(controller.teste),
+                );
+        }));
   }
 }

@@ -1,16 +1,16 @@
 import 'package:consumo_de_api_de_clima/app/data/models/weather_model.dart';
-import 'package:consumo_de_api_de_clima/app/data/providers/weather_provider.dart';
 import 'package:consumo_de_api_de_clima/app/data/repositories/weather_repository.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
 
   final teste = "testando controller :)";
+  bool isLoading = true;
 
+  List<Weather> weather = [];
   late final WeatherRepository? repository;
-  // HomeController({@required this.repository}) : assert(repository != null);
-  dynamic weather = <Weather>[];
+  HomeController({@required this.repository}) : assert(repository != null);
 
   @override
   void onInit() {
@@ -19,6 +19,11 @@ class HomeController extends GetxController {
   }
 
   void fetchData() {
-    repository?.getWeather().then((value) => weather = value);
+    isLoading = true;
+    repository?.getWeather().then((value) {
+      weather = value;
+      isLoading = false;
+      update();
+    });
   }
 }
