@@ -9,16 +9,15 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("teste"),
+          title: Text("Local weather"),
         ),
-        body: Text("Teste...")
-        // GetBuilder<HomeController>(builder: (_) {
-        //   return controller.isLoading
-        //       ? const Center(child: CircularProgressIndicator())
-        //       : Center(
-        //           child: Text(controller.teste),
-        //         );
-        // })
+        body: GetBuilder<HomeController>(builder: (_) {
+          return controller.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : Center(
+                  child: Text(controller.teste),
+                );
+        })
     );
   }
 }
