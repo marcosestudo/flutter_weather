@@ -15,7 +15,7 @@ class HomePage extends GetView<HomeController> {
           return controller.isLoading
               ? const Center(child: CircularProgressIndicator())
               : Center(
-                  child: Text(controller.teste),
+                  child: Text("controller.weather.main"),
                 );
         })
     );

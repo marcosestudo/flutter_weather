@@ -11,14 +11,13 @@ class WeatherApiClient {
 
   WeatherApiClient({@required this.httpClient});
 
-  Future<List<Weather>> getWeather() async {
+  Future<Object> getWeather() async {
     try {
       final response = await httpClient!.get(Uri.parse(baseUrl));
+      debugPrint("STATUS CODE --- ${response.statusCode} ---");
       if (response.statusCode == 200) {
-        Map<String, dynamic> jsonResponse = jsonDecode(response.body);
-        return jsonResponse['data']
-            .map((json) => Weather.fromJson(json))
-            .toList();
+        Set<dynamic> jsonResponse = jsonDecode(response.body);
+        return jsonResponse;
       } else {
         debugPrint('Error -getWeather');
       }
