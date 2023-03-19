@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   bool isLoading = true;
-  late double lat;
-  late double lon;
   dynamic weatherResponse;
 
   // WeatherModel weather = WeatherModel();
@@ -16,25 +14,25 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
-    fetchLocation();
-    fetchData(lat, lon);
+    fetchData();
     super.onInit();
   }
 
-  void fetchData(double lat, double lon) {
+  void fetchData() {
+    double lat;
+    double lon;
+
     isLoading = true;
-    repository?.getWeather(lat, lon).then((value) {
-      weatherResponse = value;
-      isLoading = false;
-      update();
-    });
-  }
 
-  void fetchLocation() {
-    repository?.getLocation().then((value) {
-      lat = value.lat;
-      lon = value.lon;
-    });
+    repository?.getLocation().then((location) {
+      lat = location.lat;
+      lon = location.lon;
 
+      repository?.getWeather(lat, lon).then((weatherData) {
+        weatherResponse = weatherData;
+        isLoading = false;
+        update();
+      });
+    });
   }
 }
