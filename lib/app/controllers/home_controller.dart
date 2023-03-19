@@ -19,14 +19,9 @@ class HomeController extends GetxController {
   }
 
   void fetchData() {
-    double lat;
-    double lon;
-
-    isLoading = true;
-
     repository?.getLocation().then((location) {
-      lat = location.lat;
-      lon = location.lon;
+      double lat = location['lat'];
+      double lon = location['lon'];
 
       repository?.getWeather(lat, lon).then((weatherData) {
         weatherResponse = weatherData;

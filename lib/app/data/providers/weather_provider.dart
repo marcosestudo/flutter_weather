@@ -13,10 +13,8 @@ class WeatherApiClient {
   WeatherApiClient({@required this.httpClient});
 
   Future<dynamic> getWeather(double lat, double lon) async {
-    lat = -22.90832104767929;
-    lon = -43.191145483398174;
     try {
-      final response = await httpClient!.get(Uri.parse("$baseUrl&$lat&$lon"));
+      final response = await httpClient!.get(Uri.parse("$baseUrl&lat=$lat&lon=$lon"));
       debugPrint("STATUS CODE --- ${response.statusCode} ---");
       if (response.statusCode == 200) {
         dynamic jsonResponse = jsonDecode(response.body);
