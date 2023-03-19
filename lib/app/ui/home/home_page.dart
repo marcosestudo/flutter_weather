@@ -18,10 +18,9 @@ class HomePage extends GetView<HomeController> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("id ${controller.weather['id']}"),
-                    Text("main: ${controller.weather['main']}"),
-                    Text("description: ${controller.weather['description']}"),
-                    Text("icon: ${controller.weather['icon']}"),
+                    Text("Local: ${controller.weatherResponse['name']}"),
+                    Text("Temp: ${controller.weatherResponse['main']['temp']}"),
+                    Text("Main: ${controller.weatherResponse['weather'][0]['main']}"),
                   ],
                 ),
               );

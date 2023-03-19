@@ -11,14 +11,14 @@ class WeatherApiClient {
 
   WeatherApiClient({@required this.httpClient});
 
-  Future getWeather() async {
+  Future<dynamic> getWeather() async {
     try {
       final response = await httpClient!.get(Uri.parse(baseUrl));
       debugPrint("STATUS CODE --- ${response.statusCode} ---");
       if (response.statusCode == 200) {
         dynamic jsonResponse = jsonDecode(response.body);
-        debugPrint("RESPONSE:  ${jsonResponse['weather'][0]}");
-        return jsonResponse['weather'][0];
+        debugPrint("RESPONSE:  $jsonResponse");
+        return jsonResponse;
       } else {
         debugPrint('Error -getWeather');
       }
