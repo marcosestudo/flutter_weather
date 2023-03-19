@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
-const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=-22.83178514538392&lon=-43.08279869011315&appid=00946946320790876002d6b7e579c753';
+const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=-22.90832104767929&lon=-43.191145483398174&appid=00946946320790876002d6b7e579c753&units=metric&lang=pt_br';
 // TODO: a baseurl tá com latitude e longitude fixas, buscar forma de acessar a localização do dispositivo
 class WeatherApiClient {
   final http.Client? httpClient;
