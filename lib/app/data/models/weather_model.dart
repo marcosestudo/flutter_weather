@@ -1,3 +1,4 @@
+// TODO: criar e usar model
 class WeatherModel {
   int id = 0;
   String main = "";

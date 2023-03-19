@@ -6,7 +6,11 @@ class WeatherRepository {
 
   WeatherRepository({@required this.apiClient}) : assert(apiClient != null);
 
-  Future getWeather() {
-    return apiClient!.getWeather();
+  Future getWeather(double lat, double lon) {
+    return apiClient!.getWeather(lat, lon);
+  }
+
+  Future getLocation() {
+    return apiClient!.getLocation();
   }
 }
