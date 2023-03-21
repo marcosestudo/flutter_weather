@@ -9,7 +9,9 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Local weather"),
+          title: Text("🚧 Local weather - Work in progress... 🚧"),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
         body: GetBuilder<HomeController>(builder: (_) {
           return controller.isLoading
@@ -19,8 +21,9 @@ class HomePage extends GetView<HomeController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Local: ${controller.weatherResponse['name']}"),
-                    Text("Temp: ${controller.weatherResponse['main']['temp']}"),
+                    Text("Temp: ${controller.weatherResponse['main']['temp'].toStringAsFixed(0)}C°"),
                     Text("Main: ${controller.weatherResponse['weather'][0]['main']}"),
+                    Text("${controller.weatherResponse['weather'][0]['description']}"),
                   ],
                 ),
               );
