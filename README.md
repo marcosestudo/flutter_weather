@@ -1,16 +1,31 @@
-# consumo_de_api_de_clima
+# flutter_weather_api
 
 Projeto de app comsumindo a api open weather.
 
-## Getting Started
+## É necessário ter o Flutter instalado para rodar o código
+### Observações importantes:
+Como o app foi desenvolvido para dispositivos móveis, para melhor visualização, é recomendado que o app seja executado em um celular, seja um emulador ou um dispositivo com a opção de depuração usb ativada. Para isso, antes de executar o passo 4 abaixo, abra o emulador ou plugue o cabo usb do celular com a opção de deputação usb ativada, feito isso, ao executar o comando "flutter run", o app será aberto diretamente no dispositivo conectado ou no emulador.
 
-This project is a starting point for a Flutter application.
+## 1: Clone o projeto:
 
-A few resources to get you started if this is your first Flutter project:
+```
+git clone git@github.com:marcosestudo/flutter_weather_api.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 2: Vá para a pasta:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+cd flutter_weather_api
+```
+
+## 3: Para baixar as dependências, use o comando
+
+```
+flutter pub get
+```
+
+## 4: Para rodar o app use o comando
+
+```
+flutter run
+```
